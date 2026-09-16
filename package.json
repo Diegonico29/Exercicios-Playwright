@@ -1,0 +1,16 @@
+{
+  "name": "aula-playwrigth",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/node": "^22.20.3"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "description": ""
+}
