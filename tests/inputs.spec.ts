@@ -37,7 +37,7 @@ test('deve exibir o texto informado', async ({ page }) => {
 
   await expect(campoTexto).toHaveValue(textoDigitado);
 
-  await expect(page.getByText(textoDigitado)).toBeVisible();
+  await expect(page.getByText(textoDigitado, { exact: true })).toBeVisible();
 });
 
 test('deve exibir o número informado', async ({ page }) => {
@@ -51,7 +51,7 @@ test('deve exibir o número informado', async ({ page }) => {
 
   await expect(campoNumero).toHaveValue(numero);
 
-  await expect(page.getByText(numero)).toBeVisible();
+  await expect(page.getByText(numero, { exact: true })).toBeVisible();
 });
 
 test('deve preencher e exibir todos os campos simultaneamente', async ({ page }) => {
@@ -203,11 +203,9 @@ test('deve limpar manualmente o campo de senha ao preenchê-lo com valor vazio',
   await expect(campoSenha).toHaveValue('');
 });
 
-
 test('deve executar o fluxo completo do formulário', async ({ page }) => {
 
   await acessarPagina(page);
-
 
   await expect(page.getByRole('button', { name: 'Display Inputs' })).toBeVisible();
   await expect(page.getByRole('button', { name: 'Clear Inputs' })).toBeVisible();
